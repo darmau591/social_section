@@ -1,0 +1,140 @@
+:root{
+  --text-primary-color: hsl(300, 43%, 22%);
+  --text-secondary-color: hsl(333, 80%, 67%);
+  --bg-primary-color: hsl(303, 10%, 53%);
+  --bg-secondary-color: hsl(300, 24%, 96%);
+}
+
+*{
+  box-sizing: border-box;
+  font-family: "League Spartan", Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  margin: 0;
+  /* border: 1px solid; */
+}
+
+body{
+  background-image: url(./images/bg-pattern-top-desktop.svg), url(./images/bg-pattern-bottom-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: left top, right bottom;
+
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+
+.container{
+  max-width: 1080px;
+  width: 95%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 3rem 0;
+}
+
+.col{
+  width: 45%;
+}
+
+h1{
+  color: var(--text-primary-color);
+  font-size: 4rem;
+  font-weight: 700;
+}
+p{
+  font-size: 1.2rem;
+  line-height: 1.2;
+  color: var(--text-primary-color);
+  padding-top: 1rem;
+}
+
+.rated{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--bg-secondary-color);
+  border-radius: .5rem;
+  padding: .8rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+.rated:nth-child(3){
+  margin-left: 3rem;
+}
+.rated:nth-child(2){
+  margin-left: 1.5rem;
+}
+
+.icon{
+  padding: 0 .5rem;
+}
+.rated__text{
+  color: var(--text-primary-color);
+  font-weight: 700;
+  padding: 0;
+}
+
+.card{
+  background-color: var(--text-primary-color);
+  border-radius: .5rem;
+  width: 32%;
+  padding: 2.5rem 2rem;
+}
+.card:nth-child(2){
+  margin-top: 1rem;
+}
+.card:nth-child(3){
+  margin-top: 2rem;
+}
+
+.card__top{
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.card__photo{
+  border-radius: 50%;
+  width: 3rem;
+}
+.card__name{
+  color: var(--bg-secondary-color);
+  font-weight: 400;
+}
+.card__status{
+  color: var(--text-secondary-color);
+  font-weight: 400;
+  padding-top: .4rem;
+}
+.card__info{
+  color: var(--bg-secondary-color);
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+@media screen and (max-width:768px) {
+  body{
+    place-content: inherit;
+  }
+  .row{
+    flex-direction: column;
+    text-align: center;
+  }
+  .col{
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+  .card{
+    width: 100%;
+  }
+  .rated:nth-child(n+1),.card:nth-child(n+1){
+    margin-top: 1rem;
+    margin-left: unset;
+  }
+  
+} 
